@@ -1,5 +1,6 @@
 package com.example.sharedpreferences;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -81,6 +82,15 @@ public class MainActivity extends AppCompatActivity {
                 editor.putString("keyemail",emails);
                 editor.putString("keypassword",confirm1);
                 editor.apply();
+
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("username",usernames);
+                intent.putExtra("phone",mobile);
+                intent.putExtra("email",emails);
+                intent.putExtra("password",confirm1);
+                startActivity(intent);
+
+
             }
         }
         );
